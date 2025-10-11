@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dehhnchn7mbpb"]
+[gd_scene load_steps=10 format=3 uid="uid://dehhnchn7mbpb"]
 
 [ext_resource type="PackedScene" uid="uid://gdnutflsqawt" path="res://Props/dummy.tscn" id="1_n1df7"]
 [ext_resource type="Script" uid="uid://t34ou1h3ev12" path="res://Entities/Enemy/enemy_attack_component.gd" id="2_7cavd"]
@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://dh2j0s0pysq7" path="res://Entities/Enemy/navigation_component.gd" id="3_a4i6x"]
 [ext_resource type="Script" uid="uid://crdciy6d8ar30" path="res://Entities/Enemy/enemy_state_machine.gd" id="5_c78gp"]
 [ext_resource type="Script" uid="uid://bqsgdhtbbtm2n" path="res://Entities/Enemy/wander_state.gd" id="6_fpuxb"]
-[ext_resource type="Script" uid="uid://bc0mdyyuugag8" path="res://Entities/Enemy/attack_state.gd" id="7_c78gp"]
+[ext_resource type="Script" uid="uid://bc0mdyyuugag8" path="res://Assets/attack_state.gd" id="7_c78gp"]
 [ext_resource type="Script" uid="uid://cerx17b2e6ow6" path="res://Entities/Enemy/retreat_state.gd" id="8_fpuxb"]
+[ext_resource type="Script" uid="uid://cvx0r5w30t67d" path="res://Entities/Enemy/chase_state.gd" id="9_fwycg"]
 
 [node name="Enemy" groups=["enemy"] instance=ExtResource("1_n1df7")]
 collision_layer = 3
@@ -54,6 +55,10 @@ metadata/_custom_type_script = "uid://jik8rpkqsn55"
 
 [node name="Retreat" type="Node" parent="EnemyStateMachine" index="2"]
 script = ExtResource("8_fpuxb")
+metadata/_custom_type_script = "uid://jik8rpkqsn55"
+
+[node name="Chase" type="Node" parent="EnemyStateMachine" index="3"]
+script = ExtResource("9_fwycg")
 metadata/_custom_type_script = "uid://jik8rpkqsn55"
 
 [connection signal="timeout" from="AttackComponent/CooldownTimer" to="AttackComponent" method="_on_cooldown_timeout"]

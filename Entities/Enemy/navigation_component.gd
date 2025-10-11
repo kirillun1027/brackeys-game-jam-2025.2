@@ -1,23 +1,15 @@
 extends NavigationAgent2D
 class_name NavigationComponent
 
-var speed: int = 100
 @onready var player: Player = get_tree().current_scene.get_child(0).player
 var enemy_positions: PackedVector2Array = []
 
 func _ready() -> void:
-	#target_desired_distance = _range
 	neighbor_distance = 0
 
 
 func _physics_process(delta: float) -> void:
 	if !player: return
-	
-	if distance_to_target() <= path_max_distance and avoidance_enabled == false:
-		avoidance_enabled = true
-	
-	elif distance_to_target() > path_max_distance and avoidance_enabled == true:
-		avoidance_enabled = false
 	
 	target_position = player.global_position
 	var current_position = get_parent().global_position

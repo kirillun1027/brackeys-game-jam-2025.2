@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://br2xnm8p6pp3x"
+path="res://.godot/imported/Water Chain Land.ogg-1108cb15e0beb9e92865fb5b47152f0e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/SFX/Footsteps/Water/Water Chain Land.ogg"
+dest_files=["res://.godot/imported/Water Chain Land.ogg-1108cb15e0beb9e92865fb5b47152f0e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

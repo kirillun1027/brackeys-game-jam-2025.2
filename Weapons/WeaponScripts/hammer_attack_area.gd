@@ -11,10 +11,13 @@ var offset: Vector2 = Vector2(10,0)
 @onready var line: Line2D = $Line2D
 @onready var attack_timer: Timer = $AttackTimer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
 
 func _ready() -> void:
 	attack_timer.wait_time = get_parent().lifetime_timer.wait_time if get_parent().has_node("LifetimeTimer") else 1
 	attack_timer.start()
+	cpu_particles_2d.position = offset
+	cpu_particles_2d.restart()
 
 func update_line(new_radius: float):
 	line.clear_points()
@@ -31,4 +34,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_attack_timeout() -> void:
+	$CollisionShape2D.disabled = true
+
+
+func _on_animation_timeout() -> void:
 	queue_free()

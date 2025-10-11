@@ -7,11 +7,10 @@
 [resource]
 script = ExtResource("3_j1wvh")
 damage = 5
-attack_type = 0
 lifetime = 0.3
 cooldown = 1.0
 attack_area = ExtResource("1_tj38u")
 cost = 3
 icon = ExtResource("2_exnu4")
-name = &"Sword"
+name = &"sword"
 metadata/_custom_type_script = "uid://cfkb1nddwvt6j"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0abn2gmq2rdv"
+path="res://.godot/imported/18. The Old Magician.ogg-bd194e3da0799baeb26f5febba69cfc2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/18. The Old Magician.ogg"
+dest_files=["res://.godot/imported/18. The Old Magician.ogg-bd194e3da0799baeb26f5febba69cfc2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

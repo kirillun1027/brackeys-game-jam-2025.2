@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://nkaulo7os5dn"
+path="res://.godot/imported/Torch Impact 2.ogg-3190d43d2d320f69e52de59851e7a140.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/SFX/Torch/Torch Impact 2.ogg"
+dest_files=["res://.godot/imported/Torch Impact 2.ogg-3190d43d2d320f69e52de59851e7a140.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

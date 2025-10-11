@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8ce1ib7stpup"
+path="res://.godot/imported/14. Traveling the Sky.ogg-5bf0e75b91ba8defa30b15f34fbbedf9.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/14. Traveling the Sky.ogg"
+dest_files=["res://.godot/imported/14. Traveling the Sky.ogg-5bf0e75b91ba8defa30b15f34fbbedf9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

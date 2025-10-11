@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d2e7ji3kl54l6"
+path="res://.godot/imported/02. Lively City.ogg-c5b6e2800896c7aed1de6ccb15c9c0b5.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/02. Lively City.ogg"
+dest_files=["res://.godot/imported/02. Lively City.ogg-c5b6e2800896c7aed1de6ccb15c9c0b5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://srhdwhc5y5kv"
+path="res://.godot/imported/13. Magic Temple.ogg-81b6332e4798fc9fd2e7dfe3b5b1243e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/13. Magic Temple.ogg"
+dest_files=["res://.godot/imported/13. Magic Temple.ogg-81b6332e4798fc9fd2e7dfe3b5b1243e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

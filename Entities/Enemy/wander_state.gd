@@ -5,6 +5,7 @@ var wander_speed: int = 50
 
 func enter() -> void:
 	generate_new_direction()
+	get_parent().navigation_component.avoidance_enabled = false
 
 func physics_update(delta: float) -> void:
 	if entity is Enemy:

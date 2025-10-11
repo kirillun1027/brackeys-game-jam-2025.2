@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1fod7qpjcy7i"
+path="res://.godot/imported/21. Malicious Scheme.ogg-4b9a26ba9a3e81dfcdce79725c7c20f3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/21. Malicious Scheme.ogg"
+dest_files=["res://.godot/imported/21. Malicious Scheme.ogg-4b9a26ba9a3e81dfcdce79725c7c20f3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

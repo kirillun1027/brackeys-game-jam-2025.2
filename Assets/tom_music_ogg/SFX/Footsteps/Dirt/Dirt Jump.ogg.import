@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2eyrcbbn2dii"
+path="res://.godot/imported/Dirt Jump.ogg-8fdfad0c708a7e7ad43db092d247f1ad.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/SFX/Footsteps/Dirt/Dirt Jump.ogg"
+dest_files=["res://.godot/imported/Dirt Jump.ogg-8fdfad0c708a7e7ad43db092d247f1ad.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

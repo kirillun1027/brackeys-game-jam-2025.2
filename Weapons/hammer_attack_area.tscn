@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4h8703rr8fc4"]
+[gd_scene load_steps=4 format=3 uid="uid://b4h8703rr8fc4"]
 
 [ext_resource type="Script" uid="uid://dwqs8gb11vo5b" path="res://Weapons/WeaponScripts/hammer_attack_area.gd" id="1_ighk8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7k2y"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ighk8"]
+specular_color = Color(0, 0.43776765, 0.31269038, 1)
 
 [node name="hammer_attack_area" type="Area2D"]
 script = ExtResource("1_ighk8")
@@ -11,11 +14,30 @@ script = ExtResource("1_ighk8")
 shape = SubResource("CircleShape2D_v7k2y")
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 closed = true
-width = 5.0
+width = 3.0
 
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="AnimationTimer" type="Timer" parent="."]
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 128
+texture = SubResource("CanvasTexture_ighk8")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 110.0
+damping_min = 2.062
+damping_max = 7.216
+scale_amount_max = 2.0
+color = Color(0.2239869, 0.24966207, 0.11226501, 1)
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timeout"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timeout"]

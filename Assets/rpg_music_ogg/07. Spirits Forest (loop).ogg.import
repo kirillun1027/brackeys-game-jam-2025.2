@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctyoyjuv5w38b"
+path="res://.godot/imported/07. Spirits Forest (loop).ogg-80490bdcab070ad89848f3cfd9ce562b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/07. Spirits Forest (loop).ogg"
+dest_files=["res://.godot/imported/07. Spirits Forest (loop).ogg-80490bdcab070ad89848f3cfd9ce562b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

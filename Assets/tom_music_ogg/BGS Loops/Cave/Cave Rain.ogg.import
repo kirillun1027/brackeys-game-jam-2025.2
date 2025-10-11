@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cyxhym3lp0hem"
+path="res://.godot/imported/Cave Rain.ogg-41112045497aa862118389a814d9ab64.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/BGS Loops/Cave/Cave Rain.ogg"
+dest_files=["res://.godot/imported/Cave Rain.ogg-41112045497aa862118389a814d9ab64.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

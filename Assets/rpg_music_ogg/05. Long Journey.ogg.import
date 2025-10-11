@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://r0ub5f3446bv"
+path="res://.godot/imported/05. Long Journey.ogg-94d2233c87f018e040c27b46c3bf7e83.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/05. Long Journey.ogg"
+dest_files=["res://.godot/imported/05. Long Journey.ogg-94d2233c87f018e040c27b46c3bf7e83.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

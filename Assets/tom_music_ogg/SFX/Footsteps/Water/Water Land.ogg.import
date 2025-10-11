@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cm8vpxhyhr533"
+path="res://.godot/imported/Water Land.ogg-36ec29f05cd655df6362b799b65e6aa2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/SFX/Footsteps/Water/Water Land.ogg"
+dest_files=["res://.godot/imported/Water Land.ogg-36ec29f05cd655df6362b799b65e6aa2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

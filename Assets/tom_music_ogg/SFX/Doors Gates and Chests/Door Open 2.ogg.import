@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://v5bltho27fmo"
+path="res://.godot/imported/Door Open 2.ogg-d3e65347ca423800e4a7527a205ccf13.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/SFX/Doors Gates and Chests/Door Open 2.ogg"
+dest_files=["res://.godot/imported/Door Open 2.ogg-d3e65347ca423800e4a7527a205ccf13.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

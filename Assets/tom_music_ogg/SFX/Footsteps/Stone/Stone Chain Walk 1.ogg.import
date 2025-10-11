@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dap1ua62nqwg1"
+path="res://.godot/imported/Stone Chain Walk 1.ogg-79248cc7ae76e5f03fa03b2a1eca8f6e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/SFX/Footsteps/Stone/Stone Chain Walk 1.ogg"
+dest_files=["res://.godot/imported/Stone Chain Walk 1.ogg-79248cc7ae76e5f03fa03b2a1eca8f6e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

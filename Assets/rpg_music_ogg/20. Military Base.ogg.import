@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1gtmd400j3lu"
+path="res://.godot/imported/20. Military Base.ogg-ef4e5918d0bdcb702ed88312a459f0ae.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/20. Military Base.ogg"
+dest_files=["res://.godot/imported/20. Military Base.ogg-ef4e5918d0bdcb702ed88312a459f0ae.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

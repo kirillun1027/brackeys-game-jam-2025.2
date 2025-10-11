@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4b5w600rprdx"
+path="res://.godot/imported/Inside Night Storm.ogg-3c38f7efb42d5d3256e4d70895a00f3f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/BGS Loops/Interior Night/Inside Night Storm.ogg"
+dest_files=["res://.godot/imported/Inside Night Storm.ogg-3c38f7efb42d5d3256e4d70895a00f3f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

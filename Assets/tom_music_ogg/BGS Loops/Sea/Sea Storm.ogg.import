@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbhq6ckulroyx"
+path="res://.godot/imported/Sea Storm.ogg-2dd56c7437a48cdcb97a57fbb3910b82.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/BGS Loops/Sea/Sea Storm.ogg"
+dest_files=["res://.godot/imported/Sea Storm.ogg-2dd56c7437a48cdcb97a57fbb3910b82.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jnu58divu2pa"
+path="res://.godot/imported/Wood Chain Walk 2.ogg-3b1dcb31e60f23fbfb28dd55cf132b35.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/tom_music_ogg/SFX/Footsteps/Wood/Wood Chain Walk 2.ogg"
+dest_files=["res://.godot/imported/Wood Chain Walk 2.ogg-3b1dcb31e60f23fbfb28dd55cf132b35.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

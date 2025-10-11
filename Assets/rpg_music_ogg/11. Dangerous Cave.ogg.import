@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b0trlwlc8rv1u"
+path="res://.godot/imported/11. Dangerous Cave.ogg-b7b702fb0cb2a0d27186e774b16ad142.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/11. Dangerous Cave.ogg"
+dest_files=["res://.godot/imported/11. Dangerous Cave.ogg-b7b702fb0cb2a0d27186e774b16ad142.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

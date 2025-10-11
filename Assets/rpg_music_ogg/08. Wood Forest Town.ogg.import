@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bbdaxe1bay2lx"
+path="res://.godot/imported/08. Wood Forest Town.ogg-680457c644c1d1ee7ee14ee84dad6759.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/rpg_music_ogg/08. Wood Forest Town.ogg"
+dest_files=["res://.godot/imported/08. Wood Forest Town.ogg-680457c644c1d1ee7ee14ee84dad6759.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
