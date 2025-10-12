@@ -1,5 +1,6 @@
 extends Area2D
 
+const area_instanceof = "bow"
 const SPEED: int = 500
 var direction: Vector2
 var enemy_group: StringName = "damagable"

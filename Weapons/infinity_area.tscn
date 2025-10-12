@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bndfribboqsqt"]
+
+[ext_resource type="Script" uid="uid://beve1v1k0irfm" path="res://Weapons/WeaponScripts/infinity.gd" id="1_7j1xk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_juvhf"]
+radius = 8.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bs33f"]
+radius = 9.0
+height = 28.0
+
+[node name="InfinityArea" type="Area2D"]
+script = ExtResource("1_7j1xk")
+
+[node name="InfinityBarrier" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InfinityBarrierShape" type="CollisionShape2D" parent="InfinityBarrier"]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_juvhf")
+
+[node name="InfinityShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_bs33f")
+disabled = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

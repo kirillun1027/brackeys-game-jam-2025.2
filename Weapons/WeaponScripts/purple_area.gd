@@ -1,0 +1,27 @@
+extends Area2D
+
+const area_instanceof = "purple"
+const SPEED: int = 200
+var direction: Vector2
+var enemy_group: StringName = "damagable"
+@export var size_func: Curve
+var lifetime: float = 1
+var initial_size: float = 1
+var time_elapsed: float = 0
+
+func setup(_lifetime: float, _initial_size: float):
+	lifetime = _lifetime
+	initial_size = _initial_size
+
+func _ready() -> void:
+	scale = Vector2(initial_size, initial_size)
+
+func _physics_process(delta: float) -> void:
+	position += transform.x * SPEED * delta
+	var scale_multiplier: float = initial_size * size_func.sample(time_elapsed/lifetime)
+	scale = Vector2(scale_multiplier, scale_multiplier)
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if !body.is_in_group(enemy_group) and body is not StaticBody2D: return

@@ -1,6 +1,6 @@
 class_name MobEntity extends CharacterBody2D
 
-@export var hp = 5
+@export var hp: int = 5
 @onready var animation_timer: Timer = $AnimationTimer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var original_modulate = sprite_2d.modulate

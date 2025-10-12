@@ -12,12 +12,15 @@ class_name PlayerAttackComponent
 var attack_area_instances: Array[Node]
 var direction: Vector2 = Vector2.ZERO
 var is_cooldown: bool = false
+var is_infinity_on: bool = false
 signal weapons_updated(weapon: Weapon)
 
 #region Weapon Property Preload
 const BOW: WeaponProperties = preload("res://Weapons/WeaponData/bow.tres")
 const SWORD: WeaponProperties = preload("res://Weapons/WeaponData/sword.tres")
 const HAMMER: WeaponProperties = preload("res://Weapons/WeaponData/hammer.tres")
+const INFINITY: WeaponProperties = preload("res://Weapons/WeaponData/infinity.tres")
+const PURPLE: WeaponProperties = preload("res://Weapons/WeaponData/purple.tres")
 #endregion
 
 var available_weapons: Array[Weapon] = [
@@ -31,7 +34,7 @@ var AttackTypes = WeaponProperties.AttackTypes
 var WeaponBaseStats: Dictionary[Weapon, WeaponProperties] = {}
 
 func _ready() -> void:
-	add_weapon(HAMMER)
+	add_weapon(PURPLE)
 	add_weapon(HAMMER)
 	swap_weapons()
 
@@ -75,6 +78,7 @@ func _input(event: InputEvent) -> void:
 func attack():
 	if !active_weapon: return
 	if is_cooldown: return
+	
 	set_rotation(_coords_to_angle(direction)) # Handle attack area transform
 	
 	# Handle Timers
@@ -95,7 +99,10 @@ func attack():
 	else:
 		call_deferred("add_child", attack_area)
 	
-	attack_area.body_entered.connect(on_body_attacked)
+	if active_weapon.attack_type != AttackTypes.NEUTRAL:
+		attack_area.body_entered.connect(on_body_attacked)
+		if active_weapon.instance_of == "infinity":
+			update_infinity_effect(true)
 
 
 func on_body_attacked(body: Node):
@@ -108,18 +115,32 @@ func on_body_attacked(body: Node):
 	if body is Player and body.name != get_parent().name: 
 		body.recieve_damage(active_weapon.damage)
 		return
+	
+
+func update_infinity_effect(_toggle: bool = is_infinity_on):
+	is_infinity_on = _toggle
+	get_parent().is_physical_damage_immune = is_infinity_on
 #endregion
 
 
 func on_enemy_death():
 	get_parent().biscuits += 1
 
+
+func check_attack_instances_for(_id: StringName) -> bool:
+	if !attack_area_instances: return false
+	for attack_area in attack_area_instances:
+		if attack_area and attack_area.area_instanceof == _id:
+			return true
+	return false
 #region Timers
 
 func _on_lifetime_timeout() -> void:
 	if attack_area_instances and active_weapon.attack_type == AttackTypes.RANGED:
 		if attack_area_instances.front():
 			attack_area_instances.pop_front().queue_free()
+	if check_attack_instances_for("infinity"):	update_infinity_effect(false)
+
 
 func _on_cooldown_timeout() -> void:
 	is_cooldown = false

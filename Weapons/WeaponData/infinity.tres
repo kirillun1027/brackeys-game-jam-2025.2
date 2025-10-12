@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponProperties" load_steps=4 format=3 uid="uid://dbxtv4hoosdti"]
+
+[ext_resource type="Script" uid="uid://cfkb1nddwvt6j" path="res://Weapons/WeaponData/weapon_properties.gd" id="1_s2joi"]
+[ext_resource type="Texture2D" uid="uid://dypiw0wb8if1q" path="res://Assets/Player/infinity.png" id="1_uvndi"]
+[ext_resource type="PackedScene" uid="uid://bndfribboqsqt" path="res://Weapons/infinity_area.tscn" id="1_vsfjd"]
+
+[resource]
+script = ExtResource("1_s2joi")
+lifetime = 15.0
+cooldown = 1.0
+attack_area = ExtResource("1_vsfjd")
+cost = 5
+icon = ExtResource("1_uvndi")
+name = &"infinity"
+metadata/_custom_type_script = "uid://cfkb1nddwvt6j"

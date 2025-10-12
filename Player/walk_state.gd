@@ -29,4 +29,3 @@ func physics_update(delta: float) -> void:
 			play.emit("walk_" + dir_data.get(direction), false)
 		else: 
 			play.emit("walk_right", true)
-			print("left")

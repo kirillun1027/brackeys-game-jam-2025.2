@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cyanccl4v51ac" path="res://Player/player.tscn" id="2_jlnav"]
 [ext_resource type="PackedScene" uid="uid://ce7t56ageu6bx" path="res://Items/weapon_item_entity.tscn" id="3_f7pci"]
 [ext_resource type="PackedScene" uid="uid://gdnutflsqawt" path="res://Props/dummy.tscn" id="3_o3dun"]
-[ext_resource type="Texture2D" uid="uid://d2g51iojw8mpi" path="res://Assets/Player/pink_gem_sword.png" id="4_aith4"]
 [ext_resource type="Resource" uid="uid://ca40vurd7co11" path="res://Weapons/WeaponData/bow.tres" id="4_fcts7"]
 [ext_resource type="Theme" uid="uid://b4se6i5uej5j" path="res://UI/Style/GUITheme1.tres" id="8_dnpwq"]
 [ext_resource type="PackedScene" uid="uid://cv40y7ekts2ll" path="res://UI/store_gui.tscn" id="8_v5w2q"]
@@ -24,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dxes1x5mdbkdm" path="res://Environment/Pixel Crawler - Free Pack/Environment/Props/Static/Vegetation.png" id="20_mvgk4"]
 [ext_resource type="AudioStream" uid="uid://bltq3qpqhhyw5" path="res://Assets/tom_music_ogg/BGS Loops/Forest Day/Forest Day.ogg" id="23_70xtn"]
 [ext_resource type="AudioStream" uid="uid://cicgmh1fsgqnw" path="res://Assets/rpg_music_ogg/01. Battle Theme I (loop).ogg" id="23_ok1s8"]
+[ext_resource type="Resource" uid="uid://dbxtv4hoosdti" path="res://Weapons/WeaponData/infinity.tres" id="25_qv4dp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx1w7"]
 bg_color = Color(1, 1, 1, 1)
@@ -1050,8 +1050,9 @@ position_smoothing_enabled = true
 position = Vector2(-115, 54)
 weapon_data = ExtResource("4_fcts7")
 
-[node name="Sprite2D" type="Sprite2D" parent="EntityPool/WeaponItemEntity"]
-texture = ExtResource("4_aith4")
+[node name="WeaponItemEntity2" parent="EntityPool" instance=ExtResource("3_f7pci")]
+position = Vector2(-129, -37)
+weapon_data = ExtResource("25_qv4dp")
 
 [node name="Dummy" parent="." instance=ExtResource("3_o3dun")]
 position = Vector2(57, -11)

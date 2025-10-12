@@ -1,5 +1,6 @@
 extends Area2D
 
+const area_instanceof = "hammer"
 var radius: float = 16/2 + 16*2 # 2 Tile Radius
 var precision: int = 31
 #var time: float = get_parent().lifetime_timer# if get_parent().has_node("LifetimeTimer") else 5

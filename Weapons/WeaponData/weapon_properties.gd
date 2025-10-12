@@ -14,5 +14,6 @@ class_name WeaponProperties
 
 enum AttackTypes{
 	MELEE,
-	RANGED
+	RANGED,
+	NEUTRAL,
 }

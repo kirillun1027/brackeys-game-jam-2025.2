@@ -15,6 +15,7 @@ var player_id: int = 1
 var biscuits: int = 0
 var is_in_safe_zone: bool = false
 var public_direction: Vector2
+var is_physical_damage_immune: bool = false
 @onready var hp: float = health
 @onready var dash_timer = $DashTimer
 @onready var attack_component: PlayerAttackComponent = $AttackComponent
@@ -82,6 +83,7 @@ func _on_dash_exited() -> void:
 	is_dashing = false
 
 func recieve_damage(dmg: int):
+	if is_physical_damage_immune: return
 	hp -= dmg
 	print("%s damage taken by %s (%s hp left)" % [dmg, name, hp])
 	if hp <= 0:

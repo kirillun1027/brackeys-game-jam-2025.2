@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://tfdsdetskt7u"]
+
+[ext_resource type="Script" uid="uid://b02od7w3j8w64" path="res://Weapons/WeaponScripts/purple_area.gd" id="1_cqec6"]
+[ext_resource type="Texture2D" uid="uid://b75wb2qk8r1p5" path="res://Assets/Player/purple.png" id="2_v78e7"]
+
+[sub_resource type="Curve" id="Curve_cqec6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.2471914, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_7t5dq"]
+resource_name = "purple_rotating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_e2bdt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y7bke"]
+_data = {
+&"RESET": SubResource("Animation_e2bdt"),
+&"purple_rotating": SubResource("Animation_7t5dq")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v78e7"]
+radius = 6.3245554
+
+[node name="PurpleArea" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_cqec6")
+size_func = SubResource("Curve_cqec6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v78e7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_y7bke")
+}
+autoplay = "purple_rotating"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v78e7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
