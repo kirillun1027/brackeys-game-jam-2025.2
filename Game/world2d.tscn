@@ -1223,7 +1223,6 @@ shape = SubResource("WorldBoundaryShape2D_mvgk4")
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("23_ok1s8")
-autoplay = true
 
 [node name="Ambience" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("23_70xtn")

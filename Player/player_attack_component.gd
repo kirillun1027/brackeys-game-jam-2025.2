@@ -101,8 +101,13 @@ func attack():
 	
 	if active_weapon.attack_type != AttackTypes.NEUTRAL:
 		attack_area.body_entered.connect(on_body_attacked)
-		if active_weapon.instance_of == "infinity":
-			update_infinity_effect(true)
+	
+	if active_weapon.instance_of == "purple":
+		attack_area.lifetime = active_weapon.lifetime
+		print(active_weapon.lifetime)
+	
+	if active_weapon.instance_of == "infinity":
+		update_infinity_effect(true)
 
 
 func on_body_attacked(body: Node):

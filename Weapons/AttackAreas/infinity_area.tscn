@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bndfribboqsqt"]
 
-[ext_resource type="Script" uid="uid://beve1v1k0irfm" path="res://Weapons/WeaponScripts/infinity.gd" id="1_7j1xk"]
+[ext_resource type="Script" uid="uid://beve1v1k0irfm" path="res://Weapons/AttackAreas/WeaponScripts/infinity.gd" id="1_7j1xk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_juvhf"]
 radius = 8.0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfkb1nddwvt6j" path="res://Weapons/WeaponData/weapon_properties.gd" id="1_s2joi"]
 [ext_resource type="Texture2D" uid="uid://dypiw0wb8if1q" path="res://Assets/Player/infinity.png" id="1_uvndi"]
-[ext_resource type="PackedScene" uid="uid://bndfribboqsqt" path="res://Weapons/infinity_area.tscn" id="1_vsfjd"]
+[ext_resource type="PackedScene" uid="uid://bndfribboqsqt" path="res://Weapons/AttackAreas/infinity_area.tscn" id="1_vsfjd"]
 
 [resource]
 script = ExtResource("1_s2joi")

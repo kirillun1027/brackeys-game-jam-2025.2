@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponProperties" load_steps=4 format=3 uid="uid://b1fx0qksj15pc"]
 
 [ext_resource type="Script" uid="uid://cfkb1nddwvt6j" path="res://Weapons/WeaponData/weapon_properties.gd" id="1_6qrik"]
-[ext_resource type="PackedScene" uid="uid://tfdsdetskt7u" path="res://Weapons/purple_area.tscn" id="1_q0o55"]
+[ext_resource type="PackedScene" uid="uid://tfdsdetskt7u" path="res://Weapons/AttackAreas/purple_area.tscn" id="1_g5opi"]
 [ext_resource type="Texture2D" uid="uid://b75wb2qk8r1p5" path="res://Assets/Player/purple.png" id="2_g5opi"]
 
 [resource]
@@ -10,7 +10,8 @@ damage = 20
 attack_type = 1
 lifetime = 5.0
 cooldown = 20.0
-attack_area = ExtResource("1_q0o55")
+attack_area = ExtResource("1_g5opi")
 cost = 20
 icon = ExtResource("2_g5opi")
+name = &"purple"
 metadata/_custom_type_script = "uid://cfkb1nddwvt6j"

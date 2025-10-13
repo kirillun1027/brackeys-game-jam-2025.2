@@ -8,6 +8,7 @@ var enemy_group: StringName = "damagable"
 var lifetime: float = 1
 var initial_size: float = 1
 var time_elapsed: float = 0
+@onready var timer: Timer = $Timer
 
 func setup(_lifetime: float, _initial_size: float):
 	lifetime = _lifetime
@@ -15,8 +16,12 @@ func setup(_lifetime: float, _initial_size: float):
 
 func _ready() -> void:
 	scale = Vector2(initial_size, initial_size)
+	timer.wait_time = lifetime
+	timer.start()
+	
 
 func _physics_process(delta: float) -> void:
+	time_elapsed = timer.wait_time - timer.time_left
 	position += transform.x * SPEED * delta
 	var scale_multiplier: float = initial_size * size_func.sample(time_elapsed/lifetime)
 	scale = Vector2(scale_multiplier, scale_multiplier)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4h8703rr8fc4"]
 
-[ext_resource type="Script" uid="uid://dwqs8gb11vo5b" path="res://Weapons/WeaponScripts/hammer_attack_area.gd" id="1_ighk8"]
+[ext_resource type="Script" uid="uid://dwqs8gb11vo5b" path="res://Weapons/AttackAreas/WeaponScripts/hammer_attack_area.gd" id="1_ighk8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7k2y"]
 

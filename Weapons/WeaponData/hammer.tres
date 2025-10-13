@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponProperties" load_steps=4 format=3 uid="uid://b0vbx0xus6sb3"]
 
-[ext_resource type="PackedScene" uid="uid://b4h8703rr8fc4" path="res://Weapons/hammer_attack_area.tscn" id="1_2g8pc"]
+[ext_resource type="PackedScene" uid="uid://b4h8703rr8fc4" path="res://Weapons/AttackAreas/hammer_attack_area.tscn" id="1_2g8pc"]
 [ext_resource type="Script" uid="uid://cfkb1nddwvt6j" path="res://Weapons/WeaponData/weapon_properties.gd" id="1_7x6lq"]
 [ext_resource type="Texture2D" uid="uid://cdmwh1fteuhqe" path="res://Assets/Player/pink_gem_hammer.png" id="2_l2kkd"]
 

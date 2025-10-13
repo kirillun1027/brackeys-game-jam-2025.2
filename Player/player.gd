@@ -49,7 +49,7 @@ func move(delta: float):
 		velocity = dash_speed * dash_graph.sample(progress) * direction
 
 	else:
-		var active_speed: int = speed
+		var active_speed: float = speed
 		if Input.is_action_pressed("sprint"):	active_speed = sprint_speed
 		#velocity = active_speed * direction
 		velocity.x = move_toward(velocity.x, active_speed * direction.x, active_speed / acc_time * delta)
