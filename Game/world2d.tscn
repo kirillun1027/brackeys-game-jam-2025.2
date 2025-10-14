@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://4plppxq7th5f"]
+[gd_scene load_steps=39 format=4 uid="uid://4plppxq7th5f"]
 
 [ext_resource type="Script" uid="uid://c8dat1kde3j3g" path="res://Game/world_2d.gd" id="1_jlnav"]
 [ext_resource type="PackedScene" uid="uid://cyanccl4v51ac" path="res://Player/player.tscn" id="2_jlnav"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cwjwtooxsc4e8" path="res://UI/Biscuit.png" id="9_ldnwa"]
 [ext_resource type="PackedScene" uid="uid://dehhnchn7mbpb" path="res://Entities/Enemy/enemy.tscn" id="9_o35y2"]
 [ext_resource type="PackedScene" uid="uid://1e0t3xv2l02r" path="res://Props/store.tscn" id="10_r66bl"]
+[ext_resource type="Script" uid="uid://cne0btoi5lai2" path="res://Game/terminal.gd" id="11_qv4dp"]
 [ext_resource type="Script" uid="uid://c4fcx6wj3xfbq" path="res://Game/safe_zone.gd" id="13_2m3eu"]
 [ext_resource type="Texture2D" uid="uid://cu24dngtp0evs" path="res://Props/linepng2.png" id="14_4m5yc"]
 [ext_resource type="Script" uid="uid://bp55301x0jta7" path="res://Game/safe_zone_area.gd" id="15_5wxfu"]
@@ -1116,6 +1117,34 @@ size_flags_horizontal = 3
 texture = ExtResource("9_ldnwa")
 stretch_mode = 5
 
+[node name="Terminal" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TerminalTextEditor" type="TextEdit" parent="CanvasLayer/Terminal"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -317.0
+offset_top = -93.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("11_qv4dp")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Terminal/TerminalTextEditor"]
+wait_time = 2.0
+one_shot = true
+
 [node name="Store" parent="." instance=ExtResource("10_r66bl")]
 position = Vector2(-41, 46)
 
@@ -1228,6 +1257,7 @@ stream = ExtResource("23_ok1s8")
 stream = ExtResource("23_70xtn")
 autoplay = true
 
+[connection signal="timeout" from="CanvasLayer/Terminal/TerminalTextEditor/Timer" to="CanvasLayer/Terminal/TerminalTextEditor" method="_on_timer_timeout"]
 [connection signal="timeout" from="NavigationRegion2D/EnemySpawner/SpawnTimer" to="NavigationRegion2D/EnemySpawner" method="_on_spawn_timeout"]
 [connection signal="body_entered" from="NavigationRegion2D/SafeZone/SafeZoneArea" to="NavigationRegion2D/SafeZone/SafeZoneArea" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion2D/SafeZone/SafeZoneArea" to="NavigationRegion2D/SafeZone/SafeZoneArea" method="_on_body_exited"]
