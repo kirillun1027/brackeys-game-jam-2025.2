@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv40y7ekts2ll"]
+[gd_scene load_steps=6 format=3 uid="uid://cv40y7ekts2ll"]
 
-[ext_resource type="Texture2D" uid="uid://d2g51iojw8mpi" path="res://Assets/Player/pink_gem_sword.png" id="1_85fht"]
 [ext_resource type="Script" uid="uid://et0h0j8dd4ih" path="res://UI/store_gui.gd" id="1_holoq"]
-[ext_resource type="Script" uid="uid://caq6yey2h5j6h" path="res://UI/item_display.gd" id="2_lxydt"]
-[ext_resource type="LabelSettings" uid="uid://ddwue5jn48ljw" path="res://UI/Style/new_label_settings.tres" id="3_nxsl6"]
+[ext_resource type="PackedScene" uid="uid://djnyqox371l1s" path="res://UI/display_row_container.tscn" id="2_nxsl6"]
 [ext_resource type="Resource" uid="uid://b7q55dylcodhw" path="res://Weapons/WeaponData/sword.tres" id="3_rb8l3"]
-[ext_resource type="Script" uid="uid://bt5klh8sgkigt" path="res://UI/purchase_button.gd" id="5_5j77y"]
 [ext_resource type="Resource" uid="uid://ca40vurd7co11" path="res://Weapons/WeaponData/bow.tres" id="6_rb8l3"]
 [ext_resource type="LabelSettings" uid="uid://37qhiso1yc2o" path="res://UI/Style/BigLabel.tres" id="7_rb8l3"]
 
@@ -34,107 +31,13 @@ grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Bro stop"
 
-[node name="ItemDisplayRow" type="HBoxContainer" parent="ItemDisplays"]
+[node name="DisplayRowContainer" parent="ItemDisplays" instance=ExtResource("2_nxsl6")]
 layout_mode = 2
-script = ExtResource("2_lxydt")
-item = ExtResource("3_rb8l3")
-
-[node name="ItemDisplayButton" type="TextureRect" parent="ItemDisplays/ItemDisplayRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_85fht")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="PurchaseButton" type="Button" parent="ItemDisplays/ItemDisplayRow/ItemDisplayButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-script = ExtResource("5_5j77y")
-
-[node name="Panel" type="Panel" parent="ItemDisplays/ItemDisplayRow/ItemDisplayButton"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="ItemDisplays/ItemDisplayRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PriceLabel" type="Label" parent="ItemDisplays/ItemDisplayRow/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-text = "1500 Biscuits"
-label_settings = ExtResource("3_nxsl6")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="SeparationControl" type="Control" parent="ItemDisplays"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ItemDisplayRow2" type="HBoxContainer" parent="ItemDisplays"]
-layout_mode = 2
-script = ExtResource("2_lxydt")
 item = ExtResource("6_rb8l3")
 
-[node name="ItemDisplayButton" type="TextureRect" parent="ItemDisplays/ItemDisplayRow2"]
+[node name="DisplayRowContainer2" parent="ItemDisplays" instance=ExtResource("2_nxsl6")]
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_85fht")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="PurchaseButton" type="Button" parent="ItemDisplays/ItemDisplayRow2/ItemDisplayButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-script = ExtResource("5_5j77y")
-
-[node name="Panel" type="Panel" parent="ItemDisplays/ItemDisplayRow2/ItemDisplayButton"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="ItemDisplays/ItemDisplayRow2"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PriceLabel" type="Label" parent="ItemDisplays/ItemDisplayRow2/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-text = "1500 Biscuits"
-label_settings = ExtResource("3_nxsl6")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+item = ExtResource("3_rb8l3")
 
 [node name="SoldOutLabel" type="Label" parent="."]
 visible = false
@@ -143,6 +46,3 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Sold out"
 label_settings = ExtResource("7_rb8l3")
-
-[connection signal="pressed" from="ItemDisplays/ItemDisplayRow/ItemDisplayButton/PurchaseButton" to="ItemDisplays/ItemDisplayRow/ItemDisplayButton/PurchaseButton" method="_on_pressed"]
-[connection signal="pressed" from="ItemDisplays/ItemDisplayRow2/ItemDisplayButton/PurchaseButton" to="ItemDisplays/ItemDisplayRow2/ItemDisplayButton/PurchaseButton" method="_on_pressed"]

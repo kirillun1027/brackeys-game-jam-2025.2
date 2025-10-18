@@ -8,7 +8,7 @@ signal enemy_died()
 
 
 func attack(body: Node, dmg: int):
-	if body.is_in_group("damagable")  and source_entity.DAMAGE_GROUP != body.DAMAGE_GROUP: 
+	if body.is_in_group("damagable") and source_entity.DAMAGE_GROUP != body.DAMAGE_GROUP: 
 		body.recieve_damage(dmg)
 		if body is Enemy:
 			print("from attack area")

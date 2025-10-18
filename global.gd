@@ -2,18 +2,9 @@ extends Node
 
 var game_controller: GameController
 
-#class Weapon:
-	#var damage: int
-	#var attack_type: WeaponProperties.AttackTypes
-	#var lifetime: float
-	#var cooldown: float
-	#var attack_area: PackedScene
-	#var cost: int
-	#
-	#func _init(weapon_data: WeaponProperties) -> void:
-		#damage = weapon_data.damage
-		#attack_type = weapon_data.attack_type
-		#lifetime = weapon_data.lifetime
-		#cooldown = weapon_data.cooldown
-		#attack_area = weapon_data.attack_area
-		#cost = weapon_data.cost
+const BOW = preload("uid://ca40vurd7co11")
+const HAMMER = preload("uid://b0vbx0xus6sb3")
+const PURPLE = preload("uid://b1fx0qksj15pc")
+const RED = preload("uid://ebhs11ksxfgp")
+const SWORD = preload("uid://b7q55dylcodhw")
+const INFINITY = preload("uid://dbxtv4hoosdti")

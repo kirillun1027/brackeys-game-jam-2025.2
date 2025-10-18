@@ -3,12 +3,13 @@ class_name ItemDisplayRow
 
 var item_display: TextureRect
 var price_panel: Panel
-@export var item: WeaponProperties
+@onready var item: WeaponProperties = get_parent().item
 const EMPTY_WEAPON = preload("res://Weapons/WeaponData/empty_weapon.tres")
 var purchase_button: Button
 var store: Store
 var player: Player
 signal item_purchased()
+
 
 
 func _ready() -> void:

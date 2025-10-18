@@ -7,8 +7,7 @@
 [resource]
 script = ExtResource("1_7x6lq")
 damage = 15
-attack_type = 0
-lifetime = 0.5
+lifetime = 0.125
 cooldown = 3.0
 attack_area = ExtResource("1_2g8pc")
 cost = 5

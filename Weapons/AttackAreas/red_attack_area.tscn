@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://tfdsdetskt7u"]
+[gd_scene load_steps=8 format=3 uid="uid://vplfw8mdtnr2"]
 
-[ext_resource type="Script" uid="uid://b02od7w3j8w64" path="res://Weapons/AttackAreas/WeaponScripts/purple_area.gd" id="1_cqec6"]
-[ext_resource type="Texture2D" uid="uid://b75wb2qk8r1p5" path="res://Assets/Player/purple.png" id="2_v78e7"]
+[ext_resource type="Script" uid="uid://bontsg7xcpolb" path="res://Weapons/AttackAreas/WeaponScripts/red_attack_area.gd" id="1_5k1vl"]
+[ext_resource type="Texture2D" uid="uid://2lw51pdk4jex" path="res://Assets/Player/red_shadow.png" id="2_3cmo5"]
+[ext_resource type="Texture2D" uid="uid://cui6cry577sur" path="res://Assets/Player/red.png" id="3_rrw5q"]
 
-[sub_resource type="Curve" id="Curve_cqec6"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.48314613), -0.99806297, -0.99806297, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfvni"]
+radius = 421.3846
 
 [sub_resource type="Animation" id="Animation_e2bdt"]
 length = 0.001
@@ -44,28 +44,31 @@ _data = {
 &"purple_rotating": SubResource("Animation_7t5dq")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v78e7"]
-radius = 6.3245554
+[node name="RedAttackArea" type="Area2D"]
+script = ExtResource("1_5k1vl")
+metadata/_custom_type_script = "uid://cx1fghutj1d1e"
 
-[node name="PurpleArea" type="Area2D"]
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("1_cqec6")
-size_func = SubResource("Curve_cqec6")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_vfvni")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_v78e7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 1.3
+texture = ExtResource("2_3cmo5")
+
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_rrw5q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Icon"]
 libraries = {
 &"": SubResource("AnimationLibrary_y7bke")
 }
 autoplay = "purple_rotating"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_v78e7")
-
-[node name="Timer" type="Timer" parent="."]
+[node name="LifetimeTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timeout"]

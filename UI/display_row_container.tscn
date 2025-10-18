@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://djnyqox371l1s"]
+
+[ext_resource type="Script" uid="uid://bxvc2lg0ltu3g" path="res://UI/display_row_container.gd" id="1_3dggy"]
+[ext_resource type="Script" uid="uid://caq6yey2h5j6h" path="res://UI/item_display.gd" id="1_58qd7"]
+[ext_resource type="Texture2D" uid="uid://d2g51iojw8mpi" path="res://Assets/Player/pink_gem_sword.png" id="3_6xeqy"]
+[ext_resource type="Script" uid="uid://bt5klh8sgkigt" path="res://UI/purchase_button.gd" id="4_5ddj5"]
+[ext_resource type="LabelSettings" uid="uid://ddwue5jn48ljw" path="res://UI/Style/new_label_settings.tres" id="5_hr0j1"]
+
+[node name="DisplayRowContainer" type="VBoxContainer"]
+script = ExtResource("1_3dggy")
+
+[node name="ItemDisplayRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("1_58qd7")
+
+[node name="ItemDisplayButton" type="TextureRect" parent="ItemDisplayRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_6xeqy")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="PurchaseButton" type="Button" parent="ItemDisplayRow/ItemDisplayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("4_5ddj5")
+
+[node name="Panel" type="Panel" parent="ItemDisplayRow/ItemDisplayButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ItemDisplayRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PriceLabel" type="Label" parent="ItemDisplayRow/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "1500 Biscuits"
+label_settings = ExtResource("5_hr0j1")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SeparationControl" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="ItemDisplayRow/ItemDisplayButton/PurchaseButton" to="ItemDisplayRow/ItemDisplayButton/PurchaseButton" method="_on_pressed"]

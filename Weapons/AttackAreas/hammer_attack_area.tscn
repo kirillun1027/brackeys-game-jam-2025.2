@@ -39,5 +39,6 @@ damping_max = 7.216
 scale_amount_max = 2.0
 color = Color(0.2239869, 0.24966207, 0.11226501, 1)
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timeout"]
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timeout"]

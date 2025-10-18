@@ -91,3 +91,7 @@ func _coords_to_angle(coords: Vector2) -> float:
 func update_infinity_effect(_toggle: bool = is_infinity_on):
 	is_infinity_on = _toggle
 	get_parent().is_physical_damage_immune = is_infinity_on
+
+func _on_cooldown_timeout() -> void:
+	is_cooldown = false
+	cool_down_timer.stop()

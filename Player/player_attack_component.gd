@@ -77,61 +77,6 @@ func _input(event: InputEvent) -> void:
 #endregion
 
 
-#region Attack Management
-
-#func attack():
-	#if !active_weapon: return
-	#if is_cooldown: return
-	#
-	#set_rotation(_coords_to_angle(direction)) # Handle attack area transform
-	#
-	## Handle Timers
-	#lifetime_timer.wait_time = active_weapon.lifetime
-	#cool_down_timer.wait_time = active_weapon.cooldown
-	#lifetime_timer.start()
-	#cool_down_timer.start()
-	#is_cooldown = true
-	#
-	#var attack_area: AttackArea = active_weapon.attack_area.instantiate() # Spawn attack area
-	#attack_area_instances.append(attack_area) # Register attack area
-	#play_animation()
-	#
-	## Set attack area properties
-	#if active_weapon.attack_type == AttackTypes.RANGED:
-		#attack_area.global_transform = global_transform
-		#world.EntityPool.call_deferred("add_child", attack_area)
-	#else:
-		#call_deferred("add_child", attack_area)
-	#
-	#attack_area.source_weapon = active_weapon
-	#attack_area.source_entity = get_parent()
-	#
-	#attack_area.enemy_died.connect(on_enemy_death)
-	#
-	#if active_weapon.instanceof == PURPLE:
-		#attack_area.lifetime = active_weapon.lifetime
-	#
-	#if active_weapon.instanceof == INFINITY:
-		#update_infinity_effect(true)
-
-
-#func on_body_attacked(body: Node):
-	#if body.is_in_group("damagable"): 
-		#body.recieve_damage(active_weapon.damage)
-		#if body is Enemy:
-			#if body.died.is_connected(on_enemy_death): return
-			#body.died.connect(on_enemy_death)
-		#return
-	#if body is Player and body.name != get_parent().name: 
-		#body.recieve_damage(active_weapon.damage)
-		#return
-	
-
-#func update_infinity_effect(_toggle: bool = is_infinity_on):
-	#is_infinity_on = _toggle
-	#get_parent().is_physical_damage_immune = is_infinity_on
-#endregion
-
 
 
 
@@ -144,16 +89,13 @@ func check_attack_instances_for(data: WeaponProperties) -> bool:
 	return false
 #region Timers
 
-func _on_lifetime_timeout() -> void:
-	if attack_area_instances and active_weapon.attack_type == AttackTypes.RANGED:
-		if attack_area_instances.front():
-			attack_area_instances.pop_front().queue_free()
-	if check_attack_instances_for(INFINITY):	update_infinity_effect(false)
+#func _on_lifetime_timeout() -> void:
+	#if attack_area_instances and active_weapon.attack_type == AttackTypes.RANGED:
+		#if attack_area_instances.front():
+			#attack_area_instances.pop_front().queue_free()
+	#if check_attack_instances_for(INFINITY):	update_infinity_effect(false)
 
 
-func _on_cooldown_timeout() -> void:
-	is_cooldown = false
-	cool_down_timer.stop()
 
 #endregion
 

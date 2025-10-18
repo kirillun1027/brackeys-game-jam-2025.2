@@ -65,22 +65,3 @@ func _process(delta: float) -> void:
 #func _on_cooldown_timeout() -> void:
 	#is_cooldown = false
 	#cool_down_timer.stop()
-
-
-func on_body_attacked(body: Node):
-	#if body.is_in_group("damagable"): 
-		#body.recieve_damage(active_weapon.damage)
-		#return
-	if body is Player: 
-		body.recieve_damage(active_weapon.damage)
-		return
-
-
-func _coords_to_angle(coords: Vector2) -> float:
-	var angle: float = 0
-	var x: float = coords.x; var y: float = coords.y
-	if x >= 0: angle = asin(y)
-	if x < 0:
-		if y >= 0: angle = acos(x)
-		else: angle = -acos(x)
-	return angle
