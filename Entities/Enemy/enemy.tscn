@@ -27,8 +27,6 @@ script = ExtResource("2_7cavd")
 [node name="CooldownTimer" type="Timer" parent="AttackComponent" index="0"]
 process_callback = 0
 
-[node name="LifetimeTimer" type="Timer" parent="AttackComponent" index="1"]
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4"]
 path_max_distance = 200.0
 simplify_path = true
@@ -62,7 +60,6 @@ script = ExtResource("9_fwycg")
 metadata/_custom_type_script = "uid://jik8rpkqsn55"
 
 [connection signal="timeout" from="AttackComponent/CooldownTimer" to="AttackComponent" method="_on_cooldown_timeout"]
-[connection signal="timeout" from="AttackComponent/LifetimeTimer" to="AttackComponent" method="_on_lifetime_timeout"]
 [connection signal="path_changed" from="NavigationAgent2D" to="NavigationAgent2D" method="_on_path_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="NavigationAgent2D" method="_on_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="NavigationAgent2D" method="_on_velocity_computed"]

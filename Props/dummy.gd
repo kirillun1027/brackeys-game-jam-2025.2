@@ -7,6 +7,7 @@ class_name MobEntity extends CharacterBody2D
 @onready var damage_label: Label = $DamageLabel
 signal died
 var is_alive: bool = true
+const DAMAGE_GROUP: StringName = "enemy"
 
 func recieve_damage(dmg: int) -> void:
 	hp -= dmg

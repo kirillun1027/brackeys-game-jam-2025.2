@@ -1,22 +1,22 @@
 [gd_scene load_steps=8 format=3 uid="uid://rxqdtp42h5fw"]
 
-[ext_resource type="Script" uid="uid://bbwg23mxwdkqq" path="res://Weapons/AttackAreas/WeaponScripts/attack_area.gd" id="1_c1uv8"]
-[ext_resource type="Texture2D" uid="uid://d1sa6qr4en1kh" path="res://Assets/Player/AttackSprite01.png" id="1_s4o2x"]
+[ext_resource type="Script" uid="uid://bbwg23mxwdkqq" path="res://Weapons/AttackAreas/WeaponScripts/attack_area.gd" id="1_ojvl5"]
+[ext_resource type="Texture2D" uid="uid://d1sa6qr4en1kh" path="res://Assets/Player/AttackSprite01.png" id="2_3k0pf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1uv8"]
-atlas = ExtResource("1_s4o2x")
+atlas = ExtResource("2_3k0pf")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_on4c0"]
-atlas = ExtResource("1_s4o2x")
+atlas = ExtResource("2_3k0pf")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gj62h"]
-atlas = ExtResource("1_s4o2x")
+atlas = ExtResource("2_3k0pf")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_370qg"]
-atlas = ExtResource("1_s4o2x")
+atlas = ExtResource("2_3k0pf")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ws1rn"]
@@ -39,8 +39,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="AttackArea" type="Area2D"]
-script = ExtResource("1_c1uv8")
+[node name="SwordAttackArea" type="Area2D"]
+script = ExtResource("1_ojvl5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, -14, 8, -13, 14, -7, 17, 4, 5, 13, 0, 11, 0, 7, 10, 0)
@@ -55,3 +55,5 @@ rotation = -0.676656
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ws1rn")
 animation = &"attack"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

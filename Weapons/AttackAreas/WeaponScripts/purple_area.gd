@@ -1,6 +1,6 @@
-extends Area2D
+extends AttackArea
+class_name PurpleAttackArea
 
-const area_instanceof = "purple"
 const SPEED: int = 200
 var direction: Vector2
 var enemy_group: StringName = "damagable"
@@ -15,6 +15,7 @@ func setup(_lifetime: float, _initial_size: float):
 	initial_size = _initial_size
 
 func _ready() -> void:
+	setup(source_weapon.lifetime, 1)
 	scale = Vector2(initial_size, initial_size)
 	timer.wait_time = lifetime
 	timer.start()
@@ -29,4 +30,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	attack(body, source_weapon.damage)
 	if !body.is_in_group(enemy_group) and body is not StaticBody2D: return

@@ -16,6 +16,7 @@ var biscuits: int = 0
 var is_in_safe_zone: bool = false
 var public_direction: Vector2
 var is_physical_damage_immune: bool = false
+const DAMAGE_GROUP: StringName = "player"
 @onready var hp: float = health
 @onready var dash_timer = $DashTimer
 @onready var attack_component: PlayerAttackComponent = $AttackComponent

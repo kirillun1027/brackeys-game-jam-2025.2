@@ -361,11 +361,9 @@ shape = SubResource("CircleShape2D_4ntmi")
 [node name="AttackComponent" type="Node2D" parent="."]
 script = ExtResource("3_k53q1")
 
-[node name="CooldownTimer" type="Timer" parent="AttackComponent"]
-
-[node name="LifetimeTimer" type="Timer" parent="AttackComponent"]
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AttackComponent"]
+
+[node name="CooldownTimer" type="Timer" parent="AttackComponent"]
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.3
@@ -431,7 +429,6 @@ libraries = {
 
 [connection signal="weapons_updated" from="AttackComponent" to="AttackComponent" method="_on_active_weapon_updated"]
 [connection signal="timeout" from="AttackComponent/CooldownTimer" to="AttackComponent" method="_on_cooldown_timeout"]
-[connection signal="timeout" from="AttackComponent/LifetimeTimer" to="AttackComponent" method="_on_lifetime_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_exited"]
 [connection signal="play" from="StateMachine/Idle" to="AnimatedSprite2D" method="_on_play"]
 [connection signal="play" from="StateMachine/Walk" to="AnimatedSprite2D" method="_on_play"]

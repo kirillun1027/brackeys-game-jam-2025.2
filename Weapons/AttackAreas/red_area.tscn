@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://tfdsdetskt7u"]
+[gd_scene load_steps=8 format=3 uid="uid://cc3jhbihve6hl"]
 
-[ext_resource type="Script" uid="uid://b02od7w3j8w64" path="res://Weapons/AttackAreas/WeaponScripts/purple_area.gd" id="1_cqec6"]
-[ext_resource type="Texture2D" uid="uid://b75wb2qk8r1p5" path="res://Assets/Player/purple.png" id="2_v78e7"]
+[ext_resource type="Script" uid="uid://b02od7w3j8w64" path="res://Weapons/AttackAreas/WeaponScripts/purple_area.gd" id="1_e2vh5"]
+[ext_resource type="Texture2D" uid="uid://b75wb2qk8r1p5" path="res://Assets/Player/purple.png" id="2_anhr0"]
 
 [sub_resource type="Curve" id="Curve_cqec6"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.48314613), -0.99806297, -0.99806297, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -50,11 +50,11 @@ radius = 6.3245554
 [node name="PurpleArea" type="Area2D"]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_cqec6")
+script = ExtResource("1_e2vh5")
 size_func = SubResource("Curve_cqec6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_v78e7")
+texture = ExtResource("2_anhr0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -66,7 +66,5 @@ autoplay = "purple_rotating"
 shape = SubResource("CircleShape2D_v78e7")
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="Timer2" type="Timer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
