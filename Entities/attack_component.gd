@@ -10,12 +10,19 @@ var is_cooldown: bool = false
 var is_infinity_on: bool = false
 signal weapons_updated(weapon: Weapon)
 
+##region Weapon Property Preload
+#const BOW: WeaponProperties = preload("uid://ca40vurd7co11")
+#const SWORD: WeaponProperties = preload("uid://b7q55dylcodhw")
+#const HAMMER: WeaponProperties = preload("uid://b0vbx0xus6sb3")
+#const INFINITY: WeaponProperties = preload("uid://dbxtv4hoosdti")
+#const PURPLE: WeaponProperties = preload("uid://b1fx0qksj15pc")
+##endregion
 #region Weapon Property Preload
-const BOW: WeaponProperties = preload("res://Weapons/WeaponData/bow.tres")
-const SWORD: WeaponProperties = preload("res://Weapons/WeaponData/sword.tres")
-const HAMMER: WeaponProperties = preload("res://Weapons/WeaponData/hammer.tres")
-const INFINITY: WeaponProperties = preload("res://Weapons/WeaponData/infinity.tres")
-const PURPLE: WeaponProperties = preload("res://Weapons/WeaponData/purple.tres")
+var bow: WeaponProperties
+var sword: WeaponProperties
+var hammer: WeaponProperties
+var infinity: WeaponProperties
+var purple: WeaponProperties
 #endregion
 
 var available_weapons: Array[Weapon] = [
@@ -27,6 +34,13 @@ var active_weapon: Weapon
 var AttackTypes = WeaponProperties.AttackTypes
 
 var WeaponBaseStats: Dictionary[Weapon, WeaponProperties] = {}
+
+#func nullpoint() -> void:
+	#bow = Global.BOW
+	#sword = Global.SWORD
+	#hammer = Global.HAMMER
+	#infinity = Global.INFINITY
+	#purple = Global.PURPLE
 
 func swap_weapons():
 	if available_weapons.is_empty(): return
@@ -68,11 +82,17 @@ func attack():
 	
 	attack_area.enemy_died.connect(on_enemy_death)
 	
-	if active_weapon.instanceof == PURPLE:
+	if active_weapon.instanceof == Global.PURPLE:
 		attack_area.lifetime = active_weapon.lifetime
 	
-	if active_weapon.instanceof == INFINITY:
+	if active_weapon.instanceof == Global.INFINITY:
 		update_infinity_effect(true)
+
+func add_weapon(properties: WeaponProperties):
+	var new_weapon = Weapon.new(properties)
+	available_weapons.append(new_weapon)
+	WeaponBaseStats.get_or_add(new_weapon, properties)
+	weapons_updated.emit(active_weapon)
 
 func _coords_to_angle(coords: Vector2) -> float:
 	var angle: float = 0
@@ -83,9 +103,6 @@ func _coords_to_angle(coords: Vector2) -> float:
 		else: angle = -acos(x)
 	return angle
 
-#func play_animation():
-	#if active_weapon.instanceof == SWORD:
-		#animation_player.play("sword_swing")
 
 
 func update_infinity_effect(_toggle: bool = is_infinity_on):
