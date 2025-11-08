@@ -8,15 +8,11 @@ var attack_area_instances: Array[Node]
 var direction: Vector2 = Vector2.ZERO
 var is_cooldown: bool = false
 var is_infinity_on: bool = false
+var energy_reserves: int = 0
+var energy: int = 0
+
 signal weapons_updated(weapon: Weapon)
 
-##region Weapon Property Preload
-#const BOW: WeaponProperties = preload("uid://ca40vurd7co11")
-#const SWORD: WeaponProperties = preload("uid://b7q55dylcodhw")
-#const HAMMER: WeaponProperties = preload("uid://b0vbx0xus6sb3")
-#const INFINITY: WeaponProperties = preload("uid://dbxtv4hoosdti")
-#const PURPLE: WeaponProperties = preload("uid://b1fx0qksj15pc")
-##endregion
 #region Weapon Property Preload
 var bow: WeaponProperties
 var sword: WeaponProperties
@@ -34,13 +30,6 @@ var active_weapon: Weapon
 var AttackTypes = WeaponProperties.AttackTypes
 
 var WeaponBaseStats: Dictionary[Weapon, WeaponProperties] = {}
-
-#func nullpoint() -> void:
-	#bow = Global.BOW
-	#sword = Global.SWORD
-	#hammer = Global.HAMMER
-	#infinity = Global.INFINITY
-	#purple = Global.PURPLE
 
 func swap_weapons():
 	if available_weapons.is_empty(): return

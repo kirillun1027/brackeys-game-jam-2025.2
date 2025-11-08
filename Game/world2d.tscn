@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://4plppxq7th5f"]
+[gd_scene load_steps=38 format=4 uid="uid://4plppxq7th5f"]
 
 [ext_resource type="Script" uid="uid://c8dat1kde3j3g" path="res://Game/world_2d.gd" id="1_jlnav"]
 [ext_resource type="PackedScene" uid="uid://cyanccl4v51ac" path="res://Player/player.tscn" id="2_jlnav"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://dxes1x5mdbkdm" path="res://Environment/Pixel Crawler - Free Pack/Environment/Props/Static/Vegetation.png" id="20_mvgk4"]
 [ext_resource type="AudioStream" uid="uid://bltq3qpqhhyw5" path="res://Assets/tom_music_ogg/BGS Loops/Forest Day/Forest Day.ogg" id="23_70xtn"]
 [ext_resource type="AudioStream" uid="uid://cicgmh1fsgqnw" path="res://Assets/rpg_music_ogg/01. Battle Theme I (loop).ogg" id="23_ok1s8"]
-[ext_resource type="Resource" uid="uid://dbxtv4hoosdti" path="res://Weapons/WeaponData/infinity.tres" id="25_qv4dp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx1w7"]
 bg_color = Color(1, 1, 1, 1)
@@ -1005,13 +1004,14 @@ sources/3 = SubResource("TileSetAtlasSource_wdotf")
 sources/0 = SubResource("TileSetAtlasSource_mvgk4")
 sources/1 = SubResource("TileSetAtlasSource_70xtn")
 
-[sub_resource type="Curve" id="Curve_fcts7"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.511111, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="Gradient" id="Gradient_qv4dp"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="CurveTexture" id="CurveTexture_gu00v"]
-width = 200
-curve = SubResource("Curve_fcts7")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0ndvu"]
+gradient = SubResource("Gradient_qv4dp")
+fill = 1
+fill_from = Vector2(0.5, 0.5233645)
+fill_to = Vector2(0.8037383, 0.19158879)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fcts7"]
 normal = Vector2(0, 1)
@@ -1045,15 +1045,23 @@ zoom = Vector2(4, 4)
 process_callback = 0
 position_smoothing_enabled = true
 
+[node name="PlayerCanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="CooldownBar" type="ProgressBar" parent="Player/PlayerCanvasLayer"]
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 26.0
+offset_bottom = 116.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_bx1w7")
+fill_mode = 3
+show_percentage = false
+script = ExtResource("8_wdotf")
+
 [node name="EntityPool" type="Node" parent="."]
 
 [node name="WeaponItemEntity" parent="EntityPool" instance=ExtResource("3_f7pci")]
 position = Vector2(-115, 54)
 weapon_data = ExtResource("4_fcts7")
-
-[node name="WeaponItemEntity2" parent="EntityPool" instance=ExtResource("3_f7pci")]
-position = Vector2(-129, -37)
-weapon_data = ExtResource("25_qv4dp")
 
 [node name="Dummy" parent="." instance=ExtResource("3_o3dun")]
 position = Vector2(57, -11)
@@ -1068,17 +1076,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CooldownBar" type="ProgressBar" parent="CanvasLayer/GUI"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 26.0
-offset_bottom = 116.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_bx1w7")
-fill_mode = 3
-show_percentage = false
-script = ExtResource("8_wdotf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GUI"]
 layout_mode = 1
@@ -1214,22 +1211,22 @@ tile_set = SubResource("TileSet_5wxfu")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_gu00v")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="TheSun" type="DirectionalLight2D" parent="."]
 energy = 0.3
 blend_mode = 1
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(12.9999, 65.0001)
-scale = Vector2(8.47, 1298)
+[node name="TerrainLighting" type="PointLight2D" parent="."]
+position = Vector2(56, 147.49994)
+scale = Vector2(50.374996, 37.046875)
 energy = 0.25
-texture = SubResource("CurveTexture_gu00v")
+texture = SubResource("GradientTexture2D_0ndvu")
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(10, 64)
-rotation = 1.5708
-scale = Vector2(6.5018, 1685.79)
-energy = 0.25
-texture = SubResource("CurveTexture_gu00v")
+[node name="SpawnAreaLighting" type="PointLight2D" parent="."]
+position = Vector2(3, 0)
+scale = Vector2(6.3124995, 6.2968745)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_0ndvu")
 
 [node name="Node2D" type="StaticBody2D" parent="."]
 

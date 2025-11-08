@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://btaqest10stqi"]
+[gd_scene load_steps=113 format=3 uid="uid://btaqest10stqi"]
 
 [ext_resource type="Script" uid="uid://dk1lfm3g0bne8" path="res://station.gd" id="1_elwba"]
 [ext_resource type="Texture2D" uid="uid://bohwk8rankh6m" path="res://Environment/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil_01-Sheet.png" id="2_kq8x7"]
@@ -274,6 +274,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvh4l"]
 size = Vector2(27, 12)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bm6gh"]
+polygon = PackedVector2Array(19, 30, 23, 30, 26, 25, 26, 19, 23, 17, 23, 3, -7, 3, -7, 4, -19, 4, -22, 14, -22, 26, -20, 27, -10, 27, -9, 26, -9, 18, 16, 18, 16, 25)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_t052o"]
 atlas = ExtResource("3_s00sb")
 region = Rect2(160, 80, 80, 80)
@@ -464,6 +467,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1on37"]
 size = Vector2(38, 10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8y1g6"]
+polygon = PackedVector2Array(-21, 6, 19, 6, 19, 21, 19, 33, 37, 33, 37, 23, 30, 21, 30, 11, 37, 11, 37, 0, 22, 0, 22, -14, -24, -14, -34, -7, -35, 19, -23, 19)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kiqtx"]
 atlas = ExtResource("4_5ps4t")
@@ -731,6 +737,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08sck"]
 size = Vector2(33, 12)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5ps4t"]
+polygon = PackedVector2Array(-47, 39, -37, 39, -37, 17, -26, 17, -25, 16, -25, 5, 6, 5, 17, 16, 18, 22, 24, 24, 17, 28, 17, 31, 26, 37, 28, 37, 43, 37, 48, 32, 47, 26, 33, 19, 38, 13, 38, 4, 31, 4, 31, -17, 8, -20, -1, -22, -5, -18, -12, -18, -13, -21, -30, -21, -31, -23, -35, -23, -41, -17, -44, -17, -47, -13, -47, -11, -40, -5, -31, -6, -31, -2, -34, 3, -37, 1, -47, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bm6gh"]
 bg_color = Color(0.6, 0.6, 0.6, 0.498039)
 
@@ -754,6 +763,9 @@ frame_progress = 1.0
 position = Vector2(3.5, 23)
 shape = SubResource("RectangleShape2D_nvh4l")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionLevel1"]
+occluder = SubResource("OccluderPolygon2D_bm6gh")
+
 [node name="CollisionLevel2" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(-21, 6, 19, 6, 19, 21, 19, 33, 37, 33, 37, 23, 30, 21, 30, 11, 37, 11, 37, 0, 22, 0, 22, -14, -24, -14, -34, -7, -35, 19, -23, 19)
@@ -769,6 +781,9 @@ animation = &"forging_process"
 position = Vector2(-2, 11)
 shape = SubResource("RectangleShape2D_1on37")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionLevel2"]
+occluder = SubResource("OccluderPolygon2D_8y1g6")
+
 [node name="CollisionLevel3" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-47, 39, -37, 39, -37, 17, -26, 17, -25, 16, -25, 5, 6, 5, 17, 16, 18, 22, 24, 24, 17, 28, 17, 31, 26, 37, 28, 37, 43, 37, 48, 32, 47, 26, 33, 19, 38, 13, 38, 4, 31, 4, 31, -17, 8, -20, -1, -22, -5, -18, -12, -18, -13, -21, -30, -21, -31, -23, -35, -23, -41, -17, -44, -17, -47, -13, -47, -11, -40, -5, -31, -6, -31, -2, -34, 3, -37, 1, -47, 1)
 
@@ -782,6 +797,9 @@ animation = &"forging_process"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionLevel3/InteractionArea"]
 position = Vector2(-8.5, 10)
 shape = SubResource("RectangleShape2D_08sck")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionLevel3"]
+occluder = SubResource("OccluderPolygon2D_5ps4t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -809,7 +827,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bm6gh")
 
 [node name="UpgradeSeletionMenuContainer" type="VBoxContainer" parent="CanvasLayer/WorkstationGUI"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 242.0
 offset_top = 600.0
 offset_right = 1678.0

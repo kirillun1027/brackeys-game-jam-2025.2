@@ -17,6 +17,7 @@ motion_mode = 1
 platform_on_leave = 2
 platform_floor_layers = 4294967040
 script = ExtResource("2_gyqvw")
+hp = 20
 
 [node name="Sprite2D" parent="." index="0"]
 modulate = Color(0.799456, 0.454603, 1.92523e-07, 1)

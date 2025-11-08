@@ -26,6 +26,10 @@ window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
+[dotnet]
+
+project/assembly_name="Brackey-s Game Jam"
+
 [global_group]
 
 damagable=""

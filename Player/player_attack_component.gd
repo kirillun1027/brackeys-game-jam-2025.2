@@ -4,17 +4,23 @@ class_name PlayerAttackComponent
 @onready var weapon_sprite: Sprite2D = $"../WeaponSpriteContainer/WeaponSprite"
 @onready var weapon_sprite_container: Node2D = $"../WeaponSpriteContainer"
 @onready var animation_player: AnimationPlayer = $"../WeaponSpriteContainer/WeaponSprite/AnimationPlayer"
+var time = 0
 
 func _ready() -> void:
 	cool_down_timer = $CooldownTimer
-	add_weapon(Global.PURPLE)
-	add_weapon(Global.HAMMER)
+	add_weapon(Global.SWORD)
 	swap_weapons()
 
 
 func _process(delta: float) -> void:
 	direction = (get_global_mouse_position() - global_position).normalized()
 	weapon_sprite.rotation = _coords_to_angle(direction)
+	time += delta
+	
+	if abs(weapon_sprite.rotation) > PI/2:
+		if weapon_sprite.flip_v == false:	weapon_sprite.flip_v = true
+		
+	elif weapon_sprite.flip_v == true: 	weapon_sprite.flip_v = false
 
 
 #region Weapon Swap and Input

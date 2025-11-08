@@ -11,7 +11,6 @@ func attack(body: Node, dmg: int):
 	if body.is_in_group("damagable") and source_entity.DAMAGE_GROUP != body.DAMAGE_GROUP: 
 		body.recieve_damage(dmg)
 		if body is Enemy:
-			print("from attack area")
 			var on_enemy_death: Callable = func():	enemy_died.emit()
 			if body.died.is_connected(on_enemy_death): return
 			body.died.connect(on_enemy_death)

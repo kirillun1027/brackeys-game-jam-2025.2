@@ -8,7 +8,7 @@ var enemy_group: StringName = "damagable"
 var lifetime: float = 1
 var initial_size: float = 1
 var time_elapsed: float = 0
-var size_factor: float = 1.0
+var size_factor: float = 3.0
 @onready var timer: Timer = $Timer
 
 func setup(_lifetime: float, _initial_size: float):

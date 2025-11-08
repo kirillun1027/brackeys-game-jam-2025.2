@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://et0h0j8dd4ih" path="res://UI/store_gui.gd" id="1_holoq"]
 [ext_resource type="PackedScene" uid="uid://djnyqox371l1s" path="res://UI/display_row_container.tscn" id="2_nxsl6"]
-[ext_resource type="Resource" uid="uid://b7q55dylcodhw" path="res://Weapons/WeaponData/sword.tres" id="3_rb8l3"]
-[ext_resource type="Resource" uid="uid://ca40vurd7co11" path="res://Weapons/WeaponData/bow.tres" id="6_rb8l3"]
+[ext_resource type="Resource" uid="uid://b0vbx0xus6sb3" path="res://Weapons/WeaponData/hammer.tres" id="3_nxsl6"]
+[ext_resource type="Resource" uid="uid://dbxtv4hoosdti" path="res://Weapons/WeaponData/infinity.tres" id="4_lxydt"]
 [ext_resource type="LabelSettings" uid="uid://37qhiso1yc2o" path="res://UI/Style/BigLabel.tres" id="7_rb8l3"]
 
 [node name="StoreGUI" type="Control"]
@@ -33,11 +33,11 @@ tooltip_text = "Bro stop"
 
 [node name="DisplayRowContainer" parent="ItemDisplays" instance=ExtResource("2_nxsl6")]
 layout_mode = 2
-item = ExtResource("6_rb8l3")
+item = ExtResource("3_nxsl6")
 
 [node name="DisplayRowContainer2" parent="ItemDisplays" instance=ExtResource("2_nxsl6")]
 layout_mode = 2
-item = ExtResource("3_rb8l3")
+item = ExtResource("4_lxydt")
 
 [node name="SoldOutLabel" type="Label" parent="."]
 visible = false

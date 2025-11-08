@@ -1,6 +1,6 @@
 extends State
 
-var chase_speed: int = 100
+var chase_speed: int = entity.base_speed if entity is Enemy else 100
 
 
 func physics_update(delta: float) -> void:

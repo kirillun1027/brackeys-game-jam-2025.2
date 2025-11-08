@@ -5,14 +5,14 @@ class_name Player
 @export var health: float = 10
 @export var attack_area_rotation: float = 0
 @export var spawn_points: Node2D
-var speed: float = 200
+@export var speed: float = 120
 var acc_time: float = .125
 var sprint_speed: float = speed * 1.5
 var dash_speed: float = speed * 4
 var is_dashing: bool = false
 var dash_direction: Vector2 = Vector2.ZERO
 var player_id: int = 1
-var biscuits: int = 0
+var biscuits: int = 10
 var is_in_safe_zone: bool = false
 var public_direction: Vector2
 var is_physical_damage_immune: bool = false
@@ -21,7 +21,7 @@ const DAMAGE_GROUP: StringName = "player"
 @onready var dash_timer = $DashTimer
 @onready var attack_component: PlayerAttackComponent = $AttackComponent
 @onready var start_position: Vector2 = global_position
-@onready var cooldown_bar: ProgressBar = $"../CanvasLayer/GUI/CooldownBar"
+@onready var cooldown_bar: ProgressBar = $PlayerCanvasLayer/CooldownBar
 @onready var biscuit_count_label: Label = $"../CanvasLayer/GUI/HBoxContainer/BiscuitCountLabel"
 
 
